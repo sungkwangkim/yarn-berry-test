@@ -2,6 +2,10 @@
 
 ## 01. packages/ui 폴더 생성 및 pacakge.json 생성
 
+<img width="188" alt="스크린샷 2022-12-07 22 13 57" src="https://user-images.githubusercontent.com/61961190/206188526-7eb25dc1-1217-4506-8175-d3a65a32edca.png">
+
+
+
 ```shell
 cd packages/ui
 yarn init
@@ -10,7 +14,12 @@ yarn init
 <br />
 package.json 파일을 열어서 name을 `@wanted/ui`로 변경.
 
-사진추가
+```json
+{
+  "name": "@wanted/ui",
+  "packageManager": "yarn@3.3.0",
+}
+```
 
 <br /><br />
 
@@ -54,6 +63,10 @@ yarn workspace @wanted/ui add typescript react react-dom @types/node @types/reac
 <br /><br />
 
 `packages/ui/src/index.ts`, `packages/ui/src/Button.tsx` 파일 생성
+
+<img width="238" alt="스크린샷 2022-12-07 22 12 32" src="https://user-images.githubusercontent.com/61961190/206188248-7db8c662-7c6e-4a23-893f-9bb8bb4b1450.png">
+
+
 
 <br /><br />
 
@@ -123,9 +136,14 @@ yarn workspace @wanted/web dev
 <br /><br />
 
 http://localhost:3000/ 접속해보면 아래와 같은 오류가 난다.
-사진추가
 
-**오류 원인**
+<img width="993" alt="스크린샷 2022-12-07 22 01 19" src="https://user-images.githubusercontent.com/61961190/206187860-6d8931e0-a3e5-4ea8-a393-a897eb3021e4.png">
+
+
+
+### ** 오류 원인 **
+
+
 브라우저에서 typescript 문법을 해석하지 못해서 발생한다.
 
 <br /><br />
@@ -167,9 +185,12 @@ yarn workspace @wanted/web dev
 
 <br /><br />
 
-아래와 같이 나왔다면 성공!
+✅ 아래와 같이 나왔다면 성공!
 
-사진추가
+
+<img width="784" alt="스크린샷 2022-12-07 22 06 44" src="https://user-images.githubusercontent.com/61961190/206187825-41efbef1-0362-41dd-8c1b-19fb6baf64de.png">
+
+
 
 <br /><br /><br /><br />
 
