@@ -22,14 +22,14 @@
 }
 
 ```
+![스크린샷 2022-12-07 14 39 01](https://user-images.githubusercontent.com/61961190/206114497-7a0841be-7e8e-4f0b-9b35-013829e9dbe4.png)
 
-그림추가
+<br /><br /><br />
 
 
 
 ## 02. `apps/wanted/tsconfig.json` 내용추가
 
-** 
 ```json
 {
   "$schema": "https://json.schemastore.org/tsconfig",
@@ -56,6 +56,8 @@
   ]
 }
 ```
+<br /><br />
+
 
 
 ## 03. `packages/lib/tsconfig.json` 내용추가
