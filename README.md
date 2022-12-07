@@ -1,3 +1,182 @@
+# 1-2주차 react library 패키지 만들기.
+
+## 01. packages/ui 폴더 생성 및 pacakge.json 생성
+
+```shell
+cd packages/ui
+yarn init
+```
+
+<br />
+package.json 파일을 열어서 name을 `@wanted/ui`로 변경.
+
+사진추가
+
+<br /><br />
+
+## 02. react dependency 설치
+
+```shell
+// root 이동
+cd ../../
+
+// 갱신
+yarn
+
+
+// install
+yarn workspace @wanted/ui add typescript react react-dom @types/node @types/react @types/react-dom -D
+```
+
+<br /><br />
+
+## 03. ui 패키지 설정
+
+`packages/ui/tsconfig.json` 설정
+
+```json
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "baseUrl": "./src",
+    "target": "esnext",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "module": "esnext",
+    "jsx": "react-jsx",
+    "noEmit": false,
+    "incremental": true
+  },
+  "exclude": ["**/node_modules", "**/.*/", "dist", "build"]
+}
+```
+
+<br /><br />
+
+`packages/ui/src/index.ts`, `packages/ui/src/Button.tsx` 파일 생성
+
+<br /><br />
+
+`packages/ui/src/Button.tsx` 내용추가
+
+```javascript
+import { ButtonHTMLAttributes, MouseEventHandler, ReactNode } from 'react';
+
+export type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
+  children: ReactNode,
+  onClick?: MouseEventHandler<HTMLButtonElement>,
+};
+
+const Button = (props: ButtonProps) => {
+  const { children, onClick, ...other } = props;
+
+  return (
+    <button type="button" onClick={onClick} {...other}>
+      {children}
+    </button>
+  );
+};
+
+export default Button;
+```
+
+<br /><br />
+
+`packages/ui/src/index.ts` 내용 추가
+
+```javascript
+export { default as Button } from './Button';
+```
+
+<br /><br />
+
+`packages/ui/package.json` main 추가
+
+```json
+{
+  "name": "@wanted/ui",
+  "packageManager": "yarn@3.3.0",
+  "main": "src/index.ts",
+  "devDependencies": {
+    "@types/node": "^18.11.11",
+    "@types/react": "^18.0.26",
+    "@types/react-dom": "^18.0.9",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "typescript": "^4.9.3"
+  }
+}
+```
+
+## 04. `apps/wanted` 에서 `packages/ui` 사용해보기
+
+```shell
+// root 에서
+
+// @wanted/ui 의존성 설치
+yarn workspace @wanted/web add @wanted/ui
+
+// @wanted/web 구동
+yarn workspace @wanted/web dev
+```
+
+<br /><br />
+
+http://localhost:3000/ 접속해보면 아래와 같은 오류가 난다.
+사진추가
+
+**오류 원인**
+브라우저에서 typescript 문법을 해석하지 못해서 발생한다.
+
+<br /><br />
+
+### ** 해결안 **
+
+`@wanted/web`에서 javascript로 변환(transpile) 해줘야 한다.
+
+```shell
+// next-transpile-modules 설치
+yarn workspace @wanted/web add next-transpile-modules
+```
+
+<br /><br />
+
+`apps/wanted/next.config.js` 파일 수정
+
+```javascript
+// @wanted/ui 패키지를 tranpile 시킨다.
+const withTM = require('next-transpile-modules')(['@wanted/ui']);
+
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  reactStrictMode: true,
+  swcMinify: true,
+};
+
+module.exports = withTM(nextConfig);
+```
+
+<br />
+
+종료하고 다시 실행해본다.
+
+```shell
+// @wanted/web 구동
+yarn workspace @wanted/web dev
+```
+
+<br /><br />
+
+아래와 같이 나왔다면 성공!
+
+사진추가
+
+<br /><br /><br /><br />
+
+---
+
+<br /><br /><br /><br />
+
 # 1-2주차 prettier, eslint 설정 공통화
 
 <br /><br />
@@ -15,8 +194,6 @@ yarn dlx @yarnpkg/sdks
 
 ![스크린샷 2022-12-07 16 45 14](https://user-images.githubusercontent.com/61961190/206150428-c90f79ec-879d-4392-8fcf-e4dcc114f9b2.png)
 
-
-
 <br /><br />
 
 ## 02. vscode 익스텐션 설치
@@ -26,18 +203,12 @@ yarn dlx @yarnpkg/sdks
 
 ![스크린샷 2022-12-07 19 11 12](https://user-images.githubusercontent.com/61961190/206151023-639da36f-0542-45a3-8424-1d479f18b62e.png)
 
-
 ![스크린샷 2022-12-07 16 43 59](https://user-images.githubusercontent.com/61961190/206150497-eda74dd2-b3ab-4e3f-a8d6-c4f9be478d32.png)
 
 `.vscode/extensions.json` 추가되면 위 그림에 보이는 대로
 `이 확장은 현재 작업 영역의 사용자가 권장한 항목입니다`표시 됩니다.
 
-
-
-
 <br /><br />
-
-
 
 ## 03. `.vscode/settings.json` 설정 추가
 
@@ -54,9 +225,6 @@ yarn dlx @yarnpkg/sdks
 ![prettier-test](https://user-images.githubusercontent.com/61961190/206151388-ef0705b4-40ce-432f-baf0-4a999e3d4fc4.gif)
 
 <br /> <br />
-
-
-
 
 ## 04. root에 `.eslintrc.js` 파일 추가
 
@@ -173,21 +341,16 @@ module.exports = {
 <br /><br />
 
 ## 06. `apps/wanted/.eslintrc.json` 파일 삭제.
+
 ![스크린샷 2022-12-07 17 26 06](https://user-images.githubusercontent.com/61961190/206151698-5bbac479-a6d1-4f02-af36-7960700124dc.png)
 
-
-
-
 <br /><br />
-
 
 ## 07. `apps/wanted/pages/index.tsx` eslint 동작 확인.
+
 ![스크린샷 2022-12-07 17 26 46](https://user-images.githubusercontent.com/61961190/206151778-94b59cc6-0977-4908-b90f-571bb60d5196.png)
 
-
 <br /><br />
-
-
 
 eslint가 정상적으로 동작이 안되면 eslint 서버를 재시작 해본다.
 
@@ -196,14 +359,9 @@ eslint가 정상적으로 동작이 안되면 eslint 서버를 재시작 해본�
 
 ![스크린샷 2022-12-07 17 28 38](https://user-images.githubusercontent.com/61961190/206151845-03bd97cb-bccb-4b37-bd15-c9701410ce51.png)
 
-
-
 ### ✅ `eslint` 동작 확인!
 
 ![eslint](https://user-images.githubusercontent.com/61961190/206153095-ce39e0bc-37d2-414c-993c-d3455659af31.gif)
-
-
-
 
 <br /><br /><br /><br />
 

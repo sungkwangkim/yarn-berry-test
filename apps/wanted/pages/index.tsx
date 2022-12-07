@@ -1,4 +1,5 @@
 import { sayHello } from '@wanted/lib';
+import { Button } from '@wanted/ui';
 import Head from 'next/head';
 import Image from 'next/image';
 import styles from '../styles/Home.module.css';
@@ -17,6 +18,7 @@ export default function Home() {
           Welcome to <a href="https://nextjs.org">Next.js!</a>
         </h1>
         <h2>{sayHello()}</h2>
+        <Button>Hello From @wanted/ui</Button>
 
         <p className={styles.description}>
           Get started by editing <code className={styles.code}>pages/index.tsx</code>
