@@ -1,8 +1,15 @@
 {
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "editor.rulers": [120],
   "search.exclude": {
     "**/.yarn": true,
     "**/.pnp.*": true
   },
   "typescript.tsdk": ".yarn/sdks/typescript/lib",
-  "typescript.enablePromptUseWorkspaceTsdk": true
+  "typescript.enablePromptUseWorkspaceTsdk": true,
+  "prettier.prettierPath": ".yarn/sdks/prettier/index.js",
+  "eslint.nodePath": ".yarn/sdks",
+  "eslint.packageManager": "yarn",
+  "eslint.validate": ["javascript", "javascriptreact", "typescript", "typescriptreact"]
 }
