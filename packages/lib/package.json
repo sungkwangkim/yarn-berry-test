@@ -1,0 +1,9 @@
+{
+  "name": "@wanted/lib",
+  "version": "1.0.0",
+  "private": true,
+  "main": "./src/index.ts",
+  "dependencies": {
+    "typescript": "^4.9.3"
+  }
+}
