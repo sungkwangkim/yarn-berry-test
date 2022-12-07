@@ -11,17 +11,33 @@ yarn add prettier eslint eslint-config-prettier eslint-plugin-import eslint-plug
 yarn dlx @yarnpkg/sdks
 ```
 
-`.vscode/extensions.json` 에 익스텐션이 추가됨
-사진추가
+`.vscode/extensions.json` 에 익스텐션이 추가 확인
+
+![스크린샷 2022-12-07 16 45 14](https://user-images.githubusercontent.com/61961190/206150428-c90f79ec-879d-4392-8fcf-e4dcc114f9b2.png)
+
+
 
 <br /><br />
 
-## 02. `esbenp.prettier-vscode`, `dbaeumer.vscode-eslint` vscode 익스텐션 설치
+## 02. vscode 익스텐션 설치
 
-사진추가
-사진추가
+- `esbenp.prettier-vscode`
+- `dbaeumer.vscode-eslint`
+
+![스크린샷 2022-12-07 19 11 12](https://user-images.githubusercontent.com/61961190/206151023-639da36f-0542-45a3-8424-1d479f18b62e.png)
+
+
+![스크린샷 2022-12-07 16 43 59](https://user-images.githubusercontent.com/61961190/206150497-eda74dd2-b3ab-4e3f-a8d6-c4f9be478d32.png)
+
+`.vscode/extensions.json` 추가되면 위 그림에 보이는 대로
+`이 확장은 현재 작업 영역의 사용자가 권장한 항목입니다`표시 됩니다.
+
+
+
 
 <br /><br />
+
+
 
 ## 03. `.vscode/settings.json` 설정 추가
 
@@ -33,9 +49,14 @@ yarn dlx @yarnpkg/sdks
 ],
 ```
 
-### `prettier` 동작 확인!
+### ✅ `prettier` 동작 확인!
 
-gif 추가
+![prettier-test](https://user-images.githubusercontent.com/61961190/206151388-ef0705b4-40ce-432f-baf0-4a999e3d4fc4.gif)
+
+<br /> <br />
+
+
+
 
 ## 04. root에 `.eslintrc.js` 파일 추가
 
@@ -152,15 +173,37 @@ module.exports = {
 <br /><br />
 
 ## 06. `apps/wanted/.eslintrc.json` 파일 삭제.
+![스크린샷 2022-12-07 17 26 06](https://user-images.githubusercontent.com/61961190/206151698-5bbac479-a6d1-4f02-af36-7960700124dc.png)
 
-그림추가
+
+
+
+<br /><br />
+
 
 ## 07. `apps/wanted/pages/index.tsx` eslint 동작 확인.
+![스크린샷 2022-12-07 17 26 46](https://user-images.githubusercontent.com/61961190/206151778-94b59cc6-0977-4908-b90f-571bb60d5196.png)
 
-그림추가
 
-eslint가 정상적으로 동작이 안되면 eslint 서버를 재시작 해본다
-command + shirt + p
+<br /><br />
+
+
+
+eslint가 정상적으로 동작이 안되면 eslint 서버를 재시작 해본다.
+
+1. ⌨️ `command + shift + p`
+2. `ESLint: Restart EsLint Server` 선택
+
+![스크린샷 2022-12-07 17 28 38](https://user-images.githubusercontent.com/61961190/206151845-03bd97cb-bccb-4b37-bd15-c9701410ce51.png)
+
+
+
+### ✅ `eslint` 동작 확인!
+
+![eslint](https://user-images.githubusercontent.com/61961190/206153095-ce39e0bc-37d2-414c-993c-d3455659af31.gif)
+
+
+
 
 <br /><br /><br /><br />
 
