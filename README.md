@@ -5,7 +5,7 @@
 ## 01. root에서 `prettier`, `eslint` 설치
 
 ```shell
-yarn add prettier eslint eslint-config-prettier eslint-plugin-import eslint-plugin-react eslint-plugin-react-hooks @typescript-eslint/eslint-plugin @typescript-eslint/parser -D
+yarn add prettier eslint eslint-config-prettier eslint-plugin-import eslint-plugin-react eslint-plugin-react-hooks eslint-import-resolver-typescript @typescript-eslint/eslint-plugin @typescript-eslint/parser -D
 
 
 yarn dlx @yarnpkg/sdks
