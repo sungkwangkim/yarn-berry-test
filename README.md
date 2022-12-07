@@ -1,4 +1,98 @@
-# yarn berry(2.x, 3.x, 4.x) workspace 
+# 1-2주차 tsconfig 설정 공유하기
+
+
+## 01. root 디렉토리에 `tsconfig.base.json` 파일 생성
+```json
+{
+  "compilerOptions": {
+    "strict": true,
+    "useUnknownInCatchVariables": true,
+    "allowJs": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "incremental": true,
+    "newLine": "lf"
+  },
+  "exclude": ["**/node_modules", "**/.*/"]
+}
+
+```
+
+그림추가
+
+
+
+## 02. `apps/wanted/tsconfig.json` 내용추가
+
+** 
+```json
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "baseUrl": "./src",
+    "target": "esnext",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "module": "esnext",
+    "jsx": "preserve",
+    "incremental": true
+  },
+  "exclude": ["**/node_modules", "**/.*/"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "**/*.mts",
+    "**/*.js",
+    "**/*.cjs",
+    "**/*.mjs",
+    "**/*.jsx",
+    "**/*.json"
+  ]
+}
+```
+
+
+## 03. `packages/lib/tsconfig.json` 내용추가
+```json
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "module": "ESNext",
+    "moduleResolution": "node",
+    "target": "ESNext",
+    "lib": ["ESNext", "dom"],
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "baseUrl": "./src",
+    "noEmit": false,
+    "incremental": true,
+    "resolveJsonModule": true
+  },
+  "exclude": ["**/node_modules", "**/.*/", "./dist", "./coverage"],
+  "include": ["**/*.ts", "**/*.js", "**/.cjs", "**/*.mjs", "**/*.json"]
+}
+```
+
+
+
+
+
+
+<br /><br /><br /><br />
+
+---
+
+<br /><br /><br /><br />
+
+
+# 1-1주차 yarn berry(2.x, 3.x, 4.x) workspace 
 
 ## 1. yarn berry 버전 변경
 ```shell
