@@ -1,10 +1,115 @@
+# 1-2주차 `typecheck` 넣어보기
+
+## 01. typescript package.json에 script추가
+
+추가해야 할 파일
+
+- `apps/wanted/package.json`
+- `packages/lib/package.json`
+- `packages/ui/package.json`
+
+<br /> <br />
+
+`typecheck` script를 추가합니다.
+
+```json
+"scripts": {
+  "typecheck": "tsc --project ./tsconfig.json --noEmit"
+},
+```
+
+<br /> <br />
+
+## 02. Button 컴포넌트 브레이징체인지 발생 시켜기.
+
+`packages/ui/src/Button.tsx`의 props type에 `variant` 추가 해본다.
+
+```javascript
+import { ButtonHTMLAttributes, MouseEventHandler, ReactNode } from 'react';
+
+export type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
+  children: ReactNode,
+  variant: 'contained' | 'outlined', // 이 부분 추가
+  onClick?: MouseEventHandler<HTMLButtonElement>,
+};
+
+const Button = (props: ButtonProps) => {
+  const { children, onClick, ...other } = props;
+
+  return (
+    <button type="button" onClick={onClick} {...other}>
+      {children}
+    </button>
+  );
+};
+
+export default Button;
+```
+
+<br /> <br />
+
+그리고 아래 커맨드를 입력해본다.
+
+```shell
+yarn workspace @wanted/web typecheck
+```
+
+아래와 같이 에러가 체크됨을 알수 있다.
+
+사진추가
+
+<br /> <br />
+
+## 03. 모든 프로젝트를 typecheck 하는 scripts 만들어보기
+
+yarn workspace에서 관리하기 위한 기본 plugin을 제공해줍니다.
+https://yarnpkg.com/api/modules/plugin_workspace_tools.html
+
+#### `workspace-tools` plugin 설치하기
+
+```shell
+yarn plugin import workspace-tools
+```
+
+사진추가
+
+#### root package.json 수정하기
+
+```json
+"scripts": {
+  "g:typecheck": "yarn workspaces foreach -pv run typecheck"
+},
+```
+
+`yarn workspaces foreach` 명령어 option 확인
+https://yarnpkg.com/cli/workspaces/foreach
+
+- `-p`: 병렬 실행
+- `-v`: workspace name 출력
+
+<br /><br />
+
+`@wanted/web` 에 에러를 확인할 수 있음.
+
+사진추가
+
+<br /><br />
+
+`apps/wanted/pages/index.tsx` 수정한다.
+
+사진추가
+
+<br /><br /><br /><br />
+
+---
+
+<br /><br /><br /><br />
+
 # 1-2주차 react library 패키지 만들기.
 
 ## 01. packages/ui 폴더 생성 및 pacakge.json 생성
 
 <img width="188" alt="스크린샷 2022-12-07 22 13 57" src="https://user-images.githubusercontent.com/61961190/206188526-7eb25dc1-1217-4506-8175-d3a65a32edca.png">
-
-
 
 ```shell
 cd packages/ui
@@ -17,7 +122,7 @@ package.json 파일을 열어서 name을 `@wanted/ui`로 변경.
 ```json
 {
   "name": "@wanted/ui",
-  "packageManager": "yarn@3.3.0",
+  "packageManager": "yarn@3.3.0"
 }
 ```
 
@@ -65,8 +170,6 @@ yarn workspace @wanted/ui add typescript react react-dom @types/node @types/reac
 `packages/ui/src/index.ts`, `packages/ui/src/Button.tsx` 파일 생성
 
 <img width="238" alt="스크린샷 2022-12-07 22 12 32" src="https://user-images.githubusercontent.com/61961190/206188248-7db8c662-7c6e-4a23-893f-9bb8bb4b1450.png">
-
-
 
 <br /><br />
 
@@ -139,10 +242,7 @@ http://localhost:3000/ 접속해보면 아래와 같은 오류가 난다.
 
 <img width="993" alt="스크린샷 2022-12-07 22 01 19" src="https://user-images.githubusercontent.com/61961190/206187860-6d8931e0-a3e5-4ea8-a393-a897eb3021e4.png">
 
-
-
 ### ** 오류 원인 **
-
 
 브라우저에서 typescript 문법을 해석하지 못해서 발생한다.
 
@@ -187,10 +287,7 @@ yarn workspace @wanted/web dev
 
 ✅ 아래와 같이 나왔다면 성공!
 
-
 <img width="784" alt="스크린샷 2022-12-07 22 06 44" src="https://user-images.githubusercontent.com/61961190/206187825-41efbef1-0362-41dd-8c1b-19fb6baf64de.png">
-
-
 
 <br /><br /><br /><br />
 
