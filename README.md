@@ -204,6 +204,15 @@ eslint가 정상적으로 동작이 안되면 eslint 서버를 재시작 해본�
 
 
 
+<br /><br />
+
+
+## 🗽 (추가) ESLint 설정 공유하기
+
+eslint 프로젝트를 만들어서 사용하고 싶다면 아래 링크를 확인해 주세요.
+
+- https://tech.kakao.com/2019/12/05/make-better-use-of-eslint/
+
 
 <br /><br /><br /><br />
 
@@ -528,14 +537,3 @@ yarn workspace @wanted/web run dev
 
 ![스크린샷 2022-12-07 10 54 39](https://user-images.githubusercontent.com/61961190/206068483-468265ec-c26a-4faa-bbf9-208a06fe8cf6.png)
 
-
-<br /><br />
-
----
-
-<br /><br />
-
-
-## ESLint 설정 공유하기
-
-- https://tech.kakao.com/2019/12/05/make-better-use-of-eslint/
