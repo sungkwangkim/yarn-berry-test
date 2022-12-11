@@ -28,13 +28,10 @@ yarn create next-app
 yarn create next-app
 ```
 
-
 <img width="670" alt="스크린샷 2022-12-11 22 06 14" src="https://user-images.githubusercontent.com/61961190/206905624-f6c58573-aede-41d6-99ff-851cfb4400a0.png">
-
 
 - typescript: yes
 - eslint: no
-
 
 <br /><br />
 
@@ -42,7 +39,22 @@ yarn create next-app
 
 <img width="238" alt="스크린샷 2022-12-11 22 11 10" src="https://user-images.githubusercontent.com/61961190/206905695-527d03fa-9d0c-4d3e-ad03-ae8a0cc0206e.png">
 
+<br /><br />
 
+package.json name 속성을 변경해주세요.
+
+- `apps/admin/package.json`: @wanted/admin
+- `apps/dashboard/package.json`: @wanted/dashboard
+
+<br /><br />
+
+```shell
+// root 로 이동해서 갱신해주세요.
+cd ..
+
+// 패키지 이름 갱신
+yarn
+```
 
 <br /><br /><br /><br />
 

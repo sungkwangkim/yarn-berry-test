@@ -443,6 +443,34 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@wanted/admin@workspace:apps/admin":
+  version: 0.0.0-use.local
+  resolution: "@wanted/admin@workspace:apps/admin"
+  dependencies:
+    "@types/node": 18.11.13
+    "@types/react": 18.0.26
+    "@types/react-dom": 18.0.9
+    next: 13.0.6
+    react: 18.2.0
+    react-dom: 18.2.0
+    typescript: 4.9.4
+  languageName: unknown
+  linkType: soft
+
+"@wanted/dashboard@workspace:apps/dashboard":
+  version: 0.0.0-use.local
+  resolution: "@wanted/dashboard@workspace:apps/dashboard"
+  dependencies:
+    "@types/node": 18.11.13
+    "@types/react": 18.0.26
+    "@types/react-dom": 18.0.9
+    next: 13.0.6
+    react: 18.2.0
+    react-dom: 18.2.0
+    typescript: 4.9.4
+  languageName: unknown
+  linkType: soft
+
 "@wanted/lib@workspace:^, @wanted/lib@workspace:packages/lib":
   version: 0.0.0-use.local
   resolution: "@wanted/lib@workspace:packages/lib"
@@ -500,20 +528,6 @@ __metadata:
   checksum: 4079b67283b94935157698831967642f24a075c52ce3feaaaafe095776dfbe15d86a1b33b1e53860fc0d062ed6c83f4284a5c87c85b9ad51853a01173da6097f
   languageName: node
   linkType: hard
-
-"admin@workspace:apps/admin":
-  version: 0.0.0-use.local
-  resolution: "admin@workspace:apps/admin"
-  dependencies:
-    "@types/node": 18.11.13
-    "@types/react": 18.0.26
-    "@types/react-dom": 18.0.9
-    next: 13.0.6
-    react: 18.2.0
-    react-dom: 18.2.0
-    typescript: 4.9.4
-  languageName: unknown
-  linkType: soft
 
 "ajv@npm:^6.10.0, ajv@npm:^6.12.4":
   version: 6.12.6
@@ -759,20 +773,6 @@ __metadata:
   checksum: d240b7757544460ae0586a341a53110ab0a61126570ef2d8c731e3eab3f0cb6e488e2609e6a69b46727635de49be20b071688698744417ff1b6c1d7ccd03e0de
   languageName: node
   linkType: hard
-
-"dashboard@workspace:apps/dashboard":
-  version: 0.0.0-use.local
-  resolution: "dashboard@workspace:apps/dashboard"
-  dependencies:
-    "@types/node": 18.11.13
-    "@types/react": 18.0.26
-    "@types/react-dom": 18.0.9
-    next: 13.0.6
-    react: 18.2.0
-    react-dom: 18.2.0
-    typescript: 4.9.4
-  languageName: unknown
-  linkType: soft
 
 "debug@npm:^2.6.9":
   version: 2.6.9
