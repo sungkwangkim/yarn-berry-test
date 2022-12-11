@@ -15,7 +15,7 @@ cd apps
 yarn create next-app
 ```
 
-(사진추가 yarn create next-app 설정사진)
+<img width="643" alt="스크린샷 2022-12-11 22 05 52" src="https://user-images.githubusercontent.com/61961190/206905603-a8bf6058-5e96-46f7-8e5b-d55ce0355650.png">
 
 - typescript: yes
 - eslint: no
@@ -28,12 +28,21 @@ yarn create next-app
 yarn create next-app
 ```
 
-(사진추가 yarn create next-app 설정사진)
+
+<img width="670" alt="스크린샷 2022-12-11 22 06 14" src="https://user-images.githubusercontent.com/61961190/206905624-f6c58573-aede-41d6-99ff-851cfb4400a0.png">
+
 
 - typescript: yes
 - eslint: no
 
-(사진추가 yarn create next-app 설정사진)
+
+<br /><br />
+
+아래와 apps 하위에 admin, dashboard 폴더 생성 확인
+
+<img width="238" alt="스크린샷 2022-12-11 22 11 10" src="https://user-images.githubusercontent.com/61961190/206905695-527d03fa-9d0c-4d3e-ad03-ae8a0cc0206e.png">
+
+
 
 <br /><br /><br /><br />
 
