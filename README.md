@@ -1,3 +1,47 @@
+# 1-2주차 (보충) 대규모 리펙토링
+
+지난시간 monorepo로 구축하고 브레이킹 체인지를 발생시키고, 체킹하는 방법까지 알아보았습니다.
+
+추가로, `jscodeshift`라는 javascript/typescript 수정도구에 대해서 간단히 인덱싱만 하고 지나가겠습니다.
+
+<br /><br />
+
+## `jscodeshift` github
+
+https://github.com/facebook/jscodeshift
+
+<br /><br />
+
+## 토스 사용 사례
+
+- https://toss.tech/article/jscodeshift
+
+<br /><br />
+
+## `react-query` 사용사례
+
+https://tanstack.com/query/v4/docs/guides/migrating-to-react-query-4
+
+```javascript
+- import { useQuery } from 'react-query'
+- import { ReactQueryDevtools } from 'react-query/devtools'
++ import { useQuery } from '@tanstack/react-query'
++ import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
+```
+
+```shell
+npx jscodeshift ./path/to/src/ \
+  --extensions=ts,tsx \
+  --parser=tsx \
+  --transform=./node_modules/@tanstack/react-query/codemods/v4/replace-import-specifier.js
+```
+
+<br /><br /><br /><br />
+
+---
+
+<br /><br /><br /><br />
+
 # 1-2주차 `typecheck` 넣어보기
 
 ## 01. typescript package.json에 script추가
@@ -56,9 +100,7 @@ yarn workspace @wanted/web typecheck
 
 아래와 같이 에러가 체크됨을 알수 있다.
 
-
 <img width="878" alt="스크린샷 2022-12-11 21 14 49" src="https://user-images.githubusercontent.com/61961190/206903037-7c03a382-c973-4630-bd96-fbc9aac90d1a.png">
-
 
 <br /> <br />
 
@@ -73,7 +115,6 @@ https://yarnpkg.com/api/modules/plugin_workspace_tools.html
 yarn plugin import workspace-tools
 ```
 
-
 #### root package.json 수정하기
 
 ```json
@@ -84,8 +125,6 @@ yarn plugin import workspace-tools
 
 `g:*`를 붙여주는건 global 하게 모든 프로젝트를 실행한다는 의미로 붙여주었다.
 
-
-
 `yarn workspaces foreach` 명령어 option 확인
 https://yarnpkg.com/cli/workspaces/foreach
 
@@ -94,7 +133,6 @@ https://yarnpkg.com/cli/workspaces/foreach
 
 <br /><br />
 
-
 `yarn g:typecheck` 실행해보자
 
 ```shell
@@ -102,34 +140,25 @@ https://yarnpkg.com/cli/workspaces/foreach
 yarn g:typecheck
 ```
 
-
 전체 프로젝트가 실행된 것을 알수 있고,
 `@wanted/web` 에 에러를 확인할 수 있음.
 
-
 <img width="824" alt="스크린샷 2022-12-11 21 16 30" src="https://user-images.githubusercontent.com/61961190/206903023-0e801934-e29e-49a9-864d-248b4ce49cef.png">
-
-
 
 <br /><br />
 
 `apps/wanted/pages/index.tsx` 수정한다.
 
-
 <img width="507" alt="스크린샷 2022-12-11 21 18 51" src="https://user-images.githubusercontent.com/61961190/206903111-cbb5f209-2682-47cc-80aa-b5a98c1bbca1.png">
-
 
 <br /><br />
 
 그리고, 다시 실행해보면!
-모두 에러가 없음을 확인할 수 있었다. 
+모두 에러가 없음을 확인할 수 있었다.
 
 ✅ 아래와 같이 에러가 출력되면 성공!
 
 <img width="688" alt="스크린샷 2022-12-11 21 23 12" src="https://user-images.githubusercontent.com/61961190/206903278-78f2d6bb-013a-4fcc-b95c-cb4000475fa5.png">
-
-
-
 
 <br /><br /><br /><br />
 
