@@ -1,3 +1,46 @@
+# 2-1주차 배포하기 - 테스트 환경 만들기
+
+## apps에 신규 프로젝트 2개를 더 추가한다.
+
+- admin
+- dashboard
+
+<br />
+
+먼저 `yarn create next-app`을 이용하여 admin 프로젝트를 추가한다.
+
+```shell
+cd apps
+
+yarn create next-app
+```
+
+(사진추가 yarn create next-app 설정사진)
+
+- typescript: yes
+- eslint: no
+
+<br /><br />
+
+설치가 끝나면 한번더 `yarn create next-app` 실행하여 dashboard 프로젝트도 추가한다.
+
+```shell
+yarn create next-app
+```
+
+(사진추가 yarn create next-app 설정사진)
+
+- typescript: yes
+- eslint: no
+
+(사진추가 yarn create next-app 설정사진)
+
+<br /><br /><br /><br />
+
+---
+
+<br /><br /><br /><br />
+
 # 1-2주차 (보충) 대규모 리펙토링
 
 지난시간 monorepo로 구축하고 브레이킹 체인지를 발생시키고, 체킹하는 방법까지 알아보았습니다.
