@@ -56,7 +56,9 @@ yarn workspace @wanted/web typecheck
 
 아래와 같이 에러가 체크됨을 알수 있다.
 
-사진추가
+
+<img width="878" alt="스크린샷 2022-12-11 21 14 49" src="https://user-images.githubusercontent.com/61961190/206903037-7c03a382-c973-4630-bd96-fbc9aac90d1a.png">
+
 
 <br /> <br />
 
@@ -71,7 +73,6 @@ https://yarnpkg.com/api/modules/plugin_workspace_tools.html
 yarn plugin import workspace-tools
 ```
 
-사진추가
 
 #### root package.json 수정하기
 
@@ -81,6 +82,10 @@ yarn plugin import workspace-tools
 },
 ```
 
+`g:*`를 붙여주는건 global 하게 모든 프로젝트를 실행한다는 의미로 붙여주었다.
+
+
+
 `yarn workspaces foreach` 명령어 option 확인
 https://yarnpkg.com/cli/workspaces/foreach
 
@@ -89,15 +94,42 @@ https://yarnpkg.com/cli/workspaces/foreach
 
 <br /><br />
 
+
+`yarn g:typecheck` 실행해보자
+
+```shell
+// root 에서
+yarn g:typecheck
+```
+
+
+전체 프로젝트가 실행된 것을 알수 있고,
 `@wanted/web` 에 에러를 확인할 수 있음.
 
-사진추가
+
+<img width="824" alt="스크린샷 2022-12-11 21 16 30" src="https://user-images.githubusercontent.com/61961190/206903023-0e801934-e29e-49a9-864d-248b4ce49cef.png">
+
+
 
 <br /><br />
 
 `apps/wanted/pages/index.tsx` 수정한다.
 
-사진추가
+
+<img width="507" alt="스크린샷 2022-12-11 21 18 51" src="https://user-images.githubusercontent.com/61961190/206903111-cbb5f209-2682-47cc-80aa-b5a98c1bbca1.png">
+
+
+<br /><br />
+
+그리고, 다시 실행해보면!
+모두 에러가 없음을 확인할 수 있었다. 
+
+✅ 아래와 같이 에러가 출력되면 성공!
+
+<img width="688" alt="스크린샷 2022-12-11 21 23 12" src="https://user-images.githubusercontent.com/61961190/206903278-78f2d6bb-013a-4fcc-b95c-cb4000475fa5.png">
+
+
+
 
 <br /><br /><br /><br />
 
