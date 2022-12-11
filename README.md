@@ -527,3 +527,15 @@ yarn workspace @wanted/web run dev
 아래와 같이 `hello from lib`이 노출된다면 성공 입니다.
 
 ![스크린샷 2022-12-07 10 54 39](https://user-images.githubusercontent.com/61961190/206068483-468265ec-c26a-4faa-bbf9-208a06fe8cf6.png)
+
+
+<br /><br />
+
+---
+
+<br /><br />
+
+
+## ESLint 설정 공유하기
+
+- https://tech.kakao.com/2019/12/05/make-better-use-of-eslint/
