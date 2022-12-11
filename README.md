@@ -20,7 +20,7 @@
 
 <br /> <br />
 
-## 02. Button 컴포넌트 브레이징체인지 발생 시켜기.
+## 02. Button 컴포넌트 브레이킹 체인지 발생 시켜기.
 
 `packages/ui/src/Button.tsx`의 props type에 `variant` 추가 해본다.
 
