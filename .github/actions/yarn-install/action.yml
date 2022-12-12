@@ -30,7 +30,7 @@ runs:
     - name: Install dependencies
       shell: bash
       run: |
-        yarn install --immutable --immutable-cache --inline-builds
+        yarn install --immutable --inline-builds
       env:
         YARN_ENABLE_GLOBAL_CACHE: 'false'
         YARN_INSTALL_STATE_PATH: .yarn/ci-cache/install-state.gz # Very small speedup when lock does not change
