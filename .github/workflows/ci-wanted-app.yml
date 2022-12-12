@@ -25,6 +25,6 @@ jobs:
         uses: ./.github/actions/yarn-install
 
       - name: Build web-app
-        working-directory: apps/nextjs-app
+        working-directory: apps/wanted
         run: |
           yarn build
