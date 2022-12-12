@@ -1,11 +1,11 @@
-name: CI-apps
+name: CI-wanted-app
 
 on:
   push:
     branches:
       - 6-deploy-github-actions
     paths:
-      - 'apps/**'
+      - 'apps/wanted/**'
 
 jobs:
   test:
@@ -25,5 +25,6 @@ jobs:
         uses: ./.github/actions/yarn-install
 
       - name: Build web-app
+        working-directory: apps/nextjs-app
         run: |
-          yarn workspaces since run build 6-deploy 6-deploy-github-actions
+          yarn build
