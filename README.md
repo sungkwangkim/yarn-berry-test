@@ -1,6 +1,104 @@
 # 2-1주차 배포하기 - github actions로 배포하기
 
-## `.github` 폴더에 yml 파일을 만든다.
+## `.github` 폴더에 2개의 yml 파일을 만든다.
+
+(사진추가)
+
+<br />
+
+### `.github/actions/yarn-install/action.yml`
+
+`yarn install` 공통으로 사용하는 파일.
+
+<br />
+
+<details>
+<summary>토글 접기/펼치기</summary>
+
+```yml
+name: 'Monorepo install (yarn)'
+description: 'Run yarn install'
+
+runs:
+  using: 'composite'
+
+  steps:
+    - name: Expose yarn config as "$GITHUB_OUTPUT"
+      id: yarn-config
+      shell: bash
+      run: |
+        echo "CACHE_FOLDER=$(yarn config get cacheFolder)" >> $GITHUB_OUTPUT
+
+    - name: Restore yarn cache
+      uses: actions/cache@v3
+      id: yarn-download-cache
+      with:
+        path: ${{ steps.yarn-config.outputs.CACHE_FOLDER }}
+        key: yarn-download-cache-${{ hashFiles('yarn.lock') }}
+        restore-keys: |
+          yarn-download-cache-
+
+    - name: Restore yarn install state
+      id: yarn-install-state-cache
+      uses: actions/cache@v3
+      with:
+        path: .yarn/ci-cache/
+        key: ${{ runner.os }}-yarn-install-state-cache-${{ hashFiles('yarn.lock', '.yarnrc.yml') }}
+
+    - name: Install dependencies
+      shell: bash
+      run: |
+        yarn install --immutable --inline-builds
+      env:
+        YARN_ENABLE_GLOBAL_CACHE: 'false'
+        YARN_INSTALL_STATE_PATH: .yarn/ci-cache/install-state.gz # Very small speedup when lock does not change
+```
+
+</details>
+
+<br /><br />
+
+### `.github/workflows/ci-wanted-app.yml`
+
+`apps/wanted` 프로젝트를 빌드/배포 하는 파일.
+
+<details>
+<summary>토글 접기/펼치기</summary>
+
+```yml
+name: CI-wanted-app
+
+on:
+  push:
+    branches:
+      - 6-deploy-github-actions
+    paths:
+      - 'apps/wanted/**'
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [16.x]
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: 📥 Monorepo install
+        uses: ./.github/actions/yarn-install
+
+      - name: Build web-app
+        working-directory: apps/wanted
+        run: |
+          yarn build
+```
+
+</details>
 
 <br /><br /><br /><br />
 
