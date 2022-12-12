@@ -4,7 +4,6 @@
 
 <img width="303" alt="스크린샷 2022-12-12 21 52 51" src="https://user-images.githubusercontent.com/61961190/207050267-62234c0c-7d6b-430d-8156-446e3bc397c6.png">
 
-
 <br />
 
 ### `.github/actions/yarn-install/action.yml`
@@ -100,6 +99,10 @@ jobs:
 ```
 
 </details>
+
+<br/><br/>
+
+## `apps/admin` 빌드/배포 github actions 파일을 만들려면 어떻게 해야할까요?
 
 <br /><br /><br /><br />
 
