@@ -1,0 +1,11 @@
+name: 'Monorepo install (yarn)'
+description: 'Run yarn install'
+
+runs:
+  using: 'composite'
+
+  steps:
+    - name: Install dependencies
+      shell: bash
+      run: |
+        yarn install
