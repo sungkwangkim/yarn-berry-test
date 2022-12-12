@@ -2,6 +2,10 @@
 
 ## yarn-plugin-workspace-since
 
+https://github.com/toss/yarn-plugin-workspace-since
+
+
+
 주어진 두 git revision 사이에 변경점이 있는 workspace에 대해서 주어진 명령어를 실행합니다. 변경점은 파생됩니다. "A" workspace에 의존성을 가진 "B" workspace가 있을때 "A", "B" 모두에 대해서 run이 실행됩니다.
 
 변경된 workspace가 없다면 아무것도 실행하지 않습니다.
@@ -22,7 +26,10 @@ yarn plugin import https://raw.githubusercontent.com/toss/yarn-plugin-workspace-
 ```
 
 아래와 같이 나오면 정상적으로 설치 된 것 입니다.
-(사진 첨부)
+
+![스크린샷 2022-12-12 14 33 23](https://user-images.githubusercontent.com/61961190/206967971-8cc5583d-745e-40d7-aefc-03be058861f0.png)
+
+
 
 <br/><br/>
 
@@ -38,6 +45,13 @@ yarn workspaces since run build 4-typecheck 6-deploy
 ```
 
 <br/><br/>
+
+![스크린샷 2022-12-12 14 34 08](https://user-images.githubusercontent.com/61961190/206968166-60bb0e56-1080-43b9-a7a7-901ec75d4054.png)
+
+
+
+
+
 
 <br /><br /><br /><br />
 
