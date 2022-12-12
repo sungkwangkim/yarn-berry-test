@@ -3,11 +3,14 @@
 ## apps에 신규 프로젝트 추가한다.
 
 1. 기존의 `apps/wanted` 폴더를 copy + paste 한다.
+
+
 2. 폴더 이름을 `admin` 으로 변경
 
 ![스크린샷 2022-12-12 14 06 07](https://user-images.githubusercontent.com/61961190/206964961-d5420564-d0d9-457e-b1bb-95f61d5e0c78.png)
 
 <br />
+
 3. `apps/admin/package.json` `name` 변경 --> `@wanted/admin`
 
 ![스크린샷 2022-12-12 14 06 33](https://user-images.githubusercontent.com/61961190/206964994-6660d5f0-cc21-4b87-89f4-2b86e0a69f33.png)
@@ -16,7 +19,16 @@
 <br />
 
 4. 터미널에서 `yarn` 으로 갱신시켜준다.
-5. `@wanted/admin` 빌드 되는지 확인.
+
+```shell
+// root 에서
+yarn
+```
+
+<br />
+
+
+6. `@wanted/admin` 빌드 되는지 확인.
 
 ```shell
 yarn workspace @wanted/admin build
