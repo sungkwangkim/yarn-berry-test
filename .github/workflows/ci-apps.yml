@@ -26,4 +26,4 @@ jobs:
 
       - name: Build web-app
         run: |
-          yarn build
+          yarn workspaces since run build main
