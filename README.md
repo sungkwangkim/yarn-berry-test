@@ -1,20 +1,43 @@
 # 2-1주차 배포하기 - 변경된 워크스페이스 감지하기
 
+## yarn-plugin-workspace-since
+
+주어진 두 git revision 사이에 변경점이 있는 workspace에 대해서 주어진 명령어를 실행합니다. 변경점은 파생됩니다. "A" workspace에 의존성을 가진 "B" workspace가 있을때 "A", "B" 모두에 대해서 run이 실행됩니다.
+
+변경된 workspace가 없다면 아무것도 실행하지 않습니다.
+
+```shell
+$ yarn workspaces since run <command> <from> [to]
+```
+
+<br/><br/>
+
+## 설치
+
 ```shell
 // root 인지 확인!
-
 // yarn-plugin-workspace-since 설치
+
 yarn plugin import https://raw.githubusercontent.com/toss/yarn-plugin-workspace-since/main/bundles/%40yarnpkg/plugin-workspace-since.js
 ```
 
 아래와 같이 나오면 정상적으로 설치 된 것 입니다.
 (사진 첨부)
-(사진 첨부)
 
 <br/><br/>
 
-문서 확인해 보기!
-https://github.com/toss/yarn-plugin-workspace-since
+## Examples
+
+main 브랜치와 4-typecheck 사이에 변경이 있는 workspace에 대해 build 명령어 실행
+
+```shell
+yarn workspaces since run build main 4-typecheck
+
+yarn workspaces since run build 4-typecheck 6-deploy
+
+```
+
+<br/><br/>
 
 <br /><br /><br /><br />
 
@@ -28,7 +51,6 @@ https://github.com/toss/yarn-plugin-workspace-since
 
 1. 기존의 `apps/wanted` 폴더를 copy + paste 한다.
 
-
 2. 폴더 이름을 `admin` 으로 변경
 
 ![스크린샷 2022-12-12 14 06 07](https://user-images.githubusercontent.com/61961190/206964961-d5420564-d0d9-457e-b1bb-95f61d5e0c78.png)
@@ -38,7 +60,6 @@ https://github.com/toss/yarn-plugin-workspace-since
 3. `apps/admin/package.json` `name` 변경 --> `@wanted/admin`
 
 ![스크린샷 2022-12-12 14 06 33](https://user-images.githubusercontent.com/61961190/206964994-6660d5f0-cc21-4b87-89f4-2b86e0a69f33.png)
-
 
 <br />
 
@@ -51,7 +72,6 @@ yarn
 
 <br />
 
-
 6. `@wanted/admin` 빌드 되는지 확인.
 
 ```shell
@@ -63,8 +83,8 @@ yarn workspace @wanted/admin build
 
 ✅ 아래와 같이 나오면 정상!
 
-![스크린샷 2022-12-12 14 04 45](https://user-images.githubusercontent.com/61961190/206965342-fb361baf-eabf-44be-8a0d-bbe9d96188a0.png)
-=======
+# ![스크린샷 2022-12-12 14 04 45](https://user-images.githubusercontent.com/61961190/206965342-fb361baf-eabf-44be-8a0d-bbe9d96188a0.png)
+
 <img width="670" alt="스크린샷 2022-12-11 22 06 14" src="https://user-images.githubusercontent.com/61961190/206905624-f6c58573-aede-41d6-99ff-851cfb4400a0.png">
 
 - typescript: yes
