@@ -1,3 +1,27 @@
+# 2-1주차 배포하기 - 변경된 워크스페이스 감지하기
+
+```shell
+// root 인지 확인!
+
+// yarn-plugin-workspace-since 설치
+yarn plugin import https://raw.githubusercontent.com/toss/yarn-plugin-workspace-since/main/bundles/%40yarnpkg/plugin-workspace-since.js
+```
+
+아래와 같이 나오면 정상적으로 설치 된 것 입니다.
+(사진 첨부)
+(사진 첨부)
+
+<br/><br/>
+
+문서 확인해 보기!
+https://github.com/toss/yarn-plugin-workspace-since
+
+<br /><br /><br /><br />
+
+---
+
+<br /><br /><br /><br />
+
 # 2-1주차 배포하기 - 테스트 환경 만들기
 
 ## apps에 신규 프로젝트 추가한다.
@@ -34,13 +58,24 @@ yarn
 yarn workspace @wanted/admin build
 ```
 
+<<<<<<< Updated upstream
 <br/><br/>
 
 ✅ 아래와 같이 나오면 정상!
 
 ![스크린샷 2022-12-12 14 04 45](https://user-images.githubusercontent.com/61961190/206965342-fb361baf-eabf-44be-8a0d-bbe9d96188a0.png)
+=======
+<img width="670" alt="스크린샷 2022-12-11 22 06 14" src="https://user-images.githubusercontent.com/61961190/206905624-f6c58573-aede-41d6-99ff-851cfb4400a0.png">
 
+- typescript: yes
+- eslint: no
 
+<br /><br />
+
+아래와 apps 하위에 admin, dashboard 폴더 생성 확인
+
+<img width="238" alt="스크린샷 2022-12-11 22 11 10" src="https://user-images.githubusercontent.com/61961190/206905695-527d03fa-9d0c-4d3e-ad03-ae8a0cc0206e.png">
+>>>>>>> Stashed changes
 
 <br /><br /><br /><br />
 
