@@ -1,3 +1,26 @@
+# 2-2주차 monorepo 오픈소스
+
+## slash
+
+[link](https://github.com/toss/slash/blob/main/README-ko_kr.md)
+
+> Slash 라이브러리는 토스에서 사용하는 TypeScript/JavaScript 패키지.
+
+- yarn berry 3.2.3 `zero-intall` 사용
+  (사진추가)
+
+- monorepo를 관리하는 특이한 점은 있는지?
+- 공통 코드 or 중복 제거 어떤것들을 하고 있는지?
+- CI/CD를 어떻게 하고 있는지?
+- 신박 하거나 특이한 설계 or 구조가 있는지?
+- 등등..
+
+<br /><br /><br /><br />
+
+---
+
+<br /><br /><br /><br />
+
 # 2-1주차 배포하기 - github actions로 배포하기
 
 ## `.github` 폴더에 2개의 yml 파일을 만든다.
