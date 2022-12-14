@@ -12,9 +12,15 @@
 - `pacages/*` 폴더 구조가 깔끔하고 직관적임.
 - babel, rollup 설정값을 공통 사용.
 
+<br /><br />
+
+---
+
+### zero-install 사용
+
 ![스크린샷 2022-12-14 17 35 56](https://user-images.githubusercontent.com/61961190/207546841-65c3a33d-4ed4-499d-8f2d-060429b4918f.png)
 
-<br /><br /><br />
+<br /><br />
 
 
 
