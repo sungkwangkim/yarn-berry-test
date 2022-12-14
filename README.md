@@ -25,7 +25,9 @@ yarn에서는 아래와 같이 package.json에서 했었는데
 
 [pnpm-workspace.yaml 링크](https://pnpm.io/pnpm-workspace_yaml)
 
-사진추가
+![2022-12-14 at 20 30](https://user-images.githubusercontent.com/61961190/207584920-76478f4d-7426-41c4-83bc-620bef3ce41c.png)
+
+
 
 ## [slash](https://github.com/toss/slash/blob/main/README-ko_kr.md)
 
