@@ -52,13 +52,8 @@ yarn에서는 아래와 같이 package.json에서 했었는데
   - [seed-design](https://github.com/daangn/seed-design)
   - [stackflow](https://github.com/daangn/stackflow)
 
-<br />
 
-- yarn@3.2.3 `zero-intall` 사용
-- circle ci
-- yarn plugin workspace since 사용.
-- `pacages/*` 폴더 구조가 깔끔하고 직관적임.
-- babel, rollup 설정값을 공통 사용.
+
 
 <br /><br />
 
