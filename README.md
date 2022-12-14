@@ -36,11 +36,13 @@ yarn에서는 아래와 같이 package.json에서 했었는데
 
 ### yarn@3.3.0 `nodeLinker: node-modules` 사용
 
-사진추가
+![2022-12-14 at 20 50](https://user-images.githubusercontent.com/61961190/207589661-c5f902d4-b75a-4371-abab-81267790bf12.png)
+
 
 ### 인프라는 [cloudflare workers 사용](https://workers.cloudflare.com/)
 
-사진추가
+<img width="652" alt="스크린샷 2022-12-14 20 52 13" src="https://user-images.githubusercontent.com/61961190/207589693-9a82e125-25cb-4164-a323-df3df0173282.png">
+
 
 ### `tsconfig` 를 공통을 사용하고, `eslint`, `prettier` 는 사용하지 않음.
 
