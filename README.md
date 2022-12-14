@@ -140,8 +140,8 @@ module.exports = { extends: '../../../babel.config.js' };
 
 사용 예시,
 
-````
 `packages/react/react/rollup.config.js`
+
 ```javascript
 const { generateRollupConfig } = require('@toss/rollup-config');
 
