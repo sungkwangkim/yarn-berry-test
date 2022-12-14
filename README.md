@@ -1,12 +1,39 @@
 # 2-2주차 monorepo 오픈소스
 
+## [vue](https://github.com/vuejs/core)
+
+> vue3 프레임워크
+
+<br />
+
+- pnpm@7.1.0
+
+### pnpm-workspace 설정
+
+yarn에서는 아래와 같이 package.json에서 했었는데
+
+```json
+"workspaces": [
+    "apps/*",
+    "packages/*"
+],
+```
+
+<br />
+
+**pnpm에서는 `pnpm-workspace.yaml` 파일을 별도로 만들어 설정해야 한다.**
+
+[pnpm-workspace.yaml 링크](https://pnpm.io/pnpm-workspace_yaml)
+
+사진추가
+
 ## [slash](https://github.com/toss/slash/blob/main/README-ko_kr.md)
 
 > Slash 라이브러리는 토스에서 사용하는 TypeScript/JavaScript 패키지.
 
 <br />
 
-- yarn berry 3.2.3 `zero-intall` 사용
+- yarn@3.2.3 `zero-intall` 사용
 - circle ci
 - yarn plugin workspace since 사용.
 - `pacages/*` 폴더 구조가 깔끔하고 직관적임.
@@ -22,37 +49,32 @@
 
 <br /><br />
 
-
-
 ### `.yarnrc`와 `.yarnrc.yml` 파일 2개가 있음.
 
 `.yarnrc`에는 단순히 `yarn-path`설정만 있는데, 굳이 2개로 나눈 이유가 있었을까?
+
 ```
 yarn-path: .yarn/releases/yarn-3.2.3.cjs
 
 ```
 
-
 우리가 실습했던 `.yarnrc.yml`파일에는 yarnPath까지 셋팅되어 있음. (맨하단)
+
 ```yml
 plugins:
   - path: .yarn/plugins/@yarnpkg/plugin-typescript.cjs
-    spec: "@yarnpkg/plugin-typescript"
+    spec: '@yarnpkg/plugin-typescript'
   - path: .yarn/plugins/@yarnpkg/plugin-workspace-tools.cjs
-    spec: "@yarnpkg/plugin-workspace-tools"
+    spec: '@yarnpkg/plugin-workspace-tools'
   - path: .yarn/plugins/@yarnpkg/plugin-workspace-since.cjs
-    spec: "https://raw.githubusercontent.com/toss/yarn-plugin-workspace-since/main/bundles/%40yarnpkg/plugin-workspace-since.js"
+    spec: 'https://raw.githubusercontent.com/toss/yarn-plugin-workspace-since/main/bundles/%40yarnpkg/plugin-workspace-since.js'
 
 yarnPath: .yarn/releases/yarn-3.3.0.cjs
-
 ```
-
 
 - 오류 때문에 이렇게 설정 한거일까?
 - 아니면 어떠한 장점이 있어서 이렇게 한 것일까?
 - 수정하고 PR 날려서 확인해 봐야 겠음.
-
-
 
 <br /><br />
 
@@ -62,29 +84,23 @@ yarnPath: .yarn/releases/yarn-3.3.0.cjs
 
 ![2022-12-14 at 18 24](https://user-images.githubusercontent.com/61961190/207557483-69ebeed2-595f-489e-93d5-8b04d6fd59fa.png)
 
-
 사용 예시,
+
 ```javascript
 module.exports = { extends: '../../../babel.config.js' };
-
 ```
-![2022-12-14 at 18 27](https://user-images.githubusercontent.com/61961190/207557864-5f05a68d-beb6-4e8f-a4aa-8220c1b9dd2f.png)
 
+![2022-12-14 at 18 27](https://user-images.githubusercontent.com/61961190/207557864-5f05a68d-beb6-4e8f-a4aa-8220c1b9dd2f.png)
 
 <br /><br/>
 
-
-
 ### `.eslintrc.js` 설정값을 공유.
+
 우리가 실습한 대로 구성되어 있음.
 
 ![2022-12-14 at 18 29](https://user-images.githubusercontent.com/61961190/207558400-8438d817-8cca-4def-b00e-306fa5581093.png)
 
-
 <br /><br />
-
-
-
 
 ### `config/rollup` 설정값을 공유.
 
@@ -92,10 +108,9 @@ module.exports = { extends: '../../../babel.config.js' };
 
 <br />
 
-
-
 사용 예시,
-```
+
+````
 `packages/react/react/rollup.config.js`
 ```javascript
 const { generateRollupConfig } = require('@toss/rollup-config');
@@ -104,19 +119,15 @@ module.exports = generateRollupConfig({
   packageDir: __dirname,
 });
 
-```
-
+````
 
 <br /><br />
 
-
 ### `yarn-plugin-workspace-since` 사용
-
 
 `.circleci/config.yml` 파일을 보면..
 
 CI/CD에서 적극 사용중.
-
 
 ```shell
 // typecheck 용
@@ -127,24 +138,19 @@ yarn workspaces since run "prepack" remotes/origin/main --include="{$INCLUDE,}"
 
 ```
 
-
 ### [circle ci](https://circleci.com/) 사용
-
 
 <br /><br />
 
-### packages/* 하위 디렉토리 그룹핑이 깔끔.
+### packages/\* 하위 디렉토리 그룹핑이 깔끔.
 
 - common: react 비관련
 - react: react 관련
 
-packages/* 하위에 1 depth로 프로젝트를 둘 경우,
+packages/\* 하위에 1 depth로 프로젝트를 둘 경우,
 패키지가 많아지면, 헷갈렸을것 같은데 상위에 그룹핑한건 좋은것 같다.
 
-
 ![2022-12-14 at 18 15](https://user-images.githubusercontent.com/61961190/207555608-1f3a42e8-0c05-4489-9bfa-0e069931c70d.png)
-
-
 
 <br /><br /><br /><br />
 
