@@ -37,6 +37,8 @@
 - trunk based development
 - feature flag
 - deploy (github actions)
+- [yarn-plugin-workspace-sice](https://github.com/toss/yarn-plugin-workspace-since)
+   - github actions 환경에서 알수 없는 error 발생으로 테스트 못해봄. 로컬에서 간단히 찍먹 수준의 실습
 
 
 <br /><br />
