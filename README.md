@@ -27,7 +27,38 @@ yarn에서는 아래와 같이 package.json에서 했었는데
 
 ![2022-12-14 at 20 30](https://user-images.githubusercontent.com/61961190/207584920-76478f4d-7426-41c4-83bc-620bef3ce41c.png)
 
+<br /><br />
 
+## [당근마켓 Website](https://github.com/daangn/websites)
+
+> 당근마켓 웹사이트를 모아놓은 monorepo
+> [gatsby](https://www.gatsbyjs.com/) 프레임워크로 사용한 정적인 웹사이트 모음.
+
+### yarn@3.3.0 `nodeLinker: node-modules` 사용
+
+사진추가
+
+### 인프라는 [cloudflare workers 사용](https://workers.cloudflare.com/)
+
+사진추가
+
+### `tsconfig` 를 공통을 사용하고, `eslint`, `prettier` 는 사용하지 않음.
+
+<br /><br />
+
+- 당근마켓 github에 다양한 repo에서 monorepo를 이용하여 구성한 것을 확인할 수 있음.
+  - [seed-design](https://github.com/daangn/seed-design)
+  - [stackflow](https://github.com/daangn/stackflow)
+
+<br />
+
+- yarn@3.2.3 `zero-intall` 사용
+- circle ci
+- yarn plugin workspace since 사용.
+- `pacages/*` 폴더 구조가 깔끔하고 직관적임.
+- babel, rollup 설정값을 공통 사용.
+
+<br /><br />
 
 ## [slash](https://github.com/toss/slash/blob/main/README-ko_kr.md)
 
