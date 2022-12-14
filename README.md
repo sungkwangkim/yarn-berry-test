@@ -1,12 +1,14 @@
 # yarn berry(2.x, 3.x, 4.x) workspace 
 
 ## 1. yarn berry 버전 변경
+
+
+```shell
 // project 폴더 생성
 mkdir yarn-berry-workspace
 cd yarn-berry-workspace
 
 
-```shell
 // yarn 버전 확인
 yarn -v 
 
