@@ -6,11 +6,18 @@
 
 <br />
 
-### `.github/actions/yarn-install/action.yml`
+### `.github/actions/yarn-install/action.yml` (Composite action)
 
-`yarn install` 공통으로 사용하는 파일.
+`yarn install` 공통으로 사용하는 action을 만들기
 
-<br />
+
+<br /><br />
+
+#### composite actions이란?
+- https://blog.outsider.ne.kr/1592
+- https://fe-developers.kakaoent.com/2022/220106-github-actions/
+
+<br /><br />
 
 <details>
 <summary>토글 접기/펼치기</summary>
