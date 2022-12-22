@@ -6,16 +6,12 @@
 
 <br />
 
+
 ### `.github/actions/yarn-install/action.yml` (Composite action)
 
 `yarn install` 공통으로 사용하는 action을 만들기
 
 
-<br /><br />
-
-#### composite actions이란?
-- https://blog.outsider.ne.kr/1592
-- https://fe-developers.kakaoent.com/2022/220106-github-actions/
 
 <br /><br />
 
@@ -64,6 +60,14 @@ runs:
 </details>
 
 <br /><br />
+
+#### composite actions이란?
+- https://blog.outsider.ne.kr/1592
+- https://fe-developers.kakaoent.com/2022/220106-github-actions/
+
+
+<br /><br />
+
 
 ### `.github/workflows/ci-wanted-app.yml`
 
