@@ -1,3 +1,105 @@
+# 1-2주차 tsconfig 설정 공유하기
+
+
+## 01. root 디렉토리에 `tsconfig.base.json` 파일 생성
+```json
+{
+  "compilerOptions": {
+    "strict": true,
+    "useUnknownInCatchVariables": true,
+    "allowJs": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "incremental": true,
+    "newLine": "lf"
+  },
+  "exclude": ["**/node_modules", "**/.*/"]
+}
+
+```
+![스크린샷 2022-12-07 14 39 01](https://user-images.githubusercontent.com/61961190/206114497-7a0841be-7e8e-4f0b-9b35-013829e9dbe4.png)
+
+<br /><br /><br />
+
+
+
+## 02. `apps/wanted/tsconfig.json` 내용추가
+
+```json
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "baseUrl": "./src",
+    "target": "esnext",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "module": "esnext",
+    "jsx": "preserve",
+    "incremental": true
+  },
+  "exclude": ["**/node_modules", "**/.*/"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "**/*.mts",
+    "**/*.js",
+    "**/*.cjs",
+    "**/*.mjs",
+    "**/*.jsx",
+    "**/*.json"
+  ]
+}
+```
+<br /><br />
+
+
+
+## 03. `packages/lib/tsconfig.json` 내용추가
+```json
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "module": "ESNext",
+    "moduleResolution": "node",
+    "target": "ESNext",
+    "lib": ["ESNext", "dom"],
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "baseUrl": "./src",
+    "noEmit": false,
+    "incremental": true,
+    "resolveJsonModule": true
+  },
+  "exclude": ["**/node_modules", "**/.*/", "./dist", "./coverage"],
+  "include": ["**/*.ts", "**/*.js", "**/.cjs", "**/*.mjs", "**/*.json"]
+}
+```
+
+
+
+
+
+
+<br /><br /><br /><br />
+
+---
+
+<br /><br /><br /><br />
+
+
+
+
+
+---
+
+
 # yarn berry(2.x, 3.x, 4.x) workspace 
 
 ## 1. yarn berry 버전 변경
