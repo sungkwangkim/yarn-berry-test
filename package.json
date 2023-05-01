@@ -1,12 +1,12 @@
 {
   "name": "yarn-berry-test",
-  "packageManager": "yarn@3.3.0",
+  "packageManager": "yarn@3.5.0",
   "private": true,
   "workspaces": [
     "apps/*",
     "packages/*"
   ],
   "devDependencies": {
-    "typescript": "^4.9.3"
+    "typescript": "^5.0.4"
   }
 }
