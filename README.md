@@ -71,7 +71,7 @@ yarn dlx @yarnpkg/sdks
 
   // 기본 포맷터 prettier로 사용
   "editor.defaultFormatter": "esbenp.prettier-vscode",
-  // 파일 저장시 포맷더 실행
+  // 파일 저장시 formatter 실행
   "editor.formatOnSave": true,
   "editor.rulers": [120]
 }
@@ -100,101 +100,90 @@ module.exports = {
     browser: true,
   },
 
-  parser: "@typescript-eslint/parser",
+  parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaFeatures: { jsx: true },
   },
 
   extends: [
-    "eslint:recommended",
-    "plugin:@typescript-eslint/recommended",
-    "plugin:react/recommended",
-    "plugin:react-hooks/recommended",
-    "prettier",
+    'eslint:recommended',
+    'plugin:@typescript-eslint/recommended',
+    'plugin:react/recommended',
+    'plugin:react-hooks/recommended',
+    'prettier',
   ],
-  plugins: ["@typescript-eslint", "import", "react", "react-hooks"],
+  plugins: ['@typescript-eslint', 'import', 'react', 'react-hooks'],
   settings: {
-    "import/resolver": { typescript: {} },
-    react: { version: "detect" },
+    'import/resolver': { typescript: {} },
+    react: { version: 'detect' },
   },
   rules: {
-    "no-implicit-coercion": "error",
-    "no-warning-comments": [
-      "warn",
+    'no-implicit-coercion': 'error',
+    'no-warning-comments': [
+      'warn',
       {
-        terms: ["TODO", "FIXME", "XXX", "BUG"],
-        location: "anywhere",
+        terms: ['TODO', 'FIXME', 'XXX', 'BUG'],
+        location: 'anywhere',
       },
     ],
-    curly: ["error", "all"],
-    eqeqeq: ["error", "always", { null: "ignore" }],
+    curly: ['error', 'all'],
+    eqeqeq: ['error', 'always', { null: 'ignore' }],
 
     // Hoisting을 전략적으로 사용한 경우가 많아서
-    "@typescript-eslint/no-use-before-define": "off",
+    '@typescript-eslint/no-use-before-define': 'off',
     // 모델 정의 부분에서 class와 interface를 합치기 위해 사용하는 용법도 잡고 있어서
-    "@typescript-eslint/no-empty-interface": "off",
+    '@typescript-eslint/no-empty-interface': 'off',
     // 모델 정의 부분에서 파라미터 프로퍼티를 잘 쓰고 있어서
-    "@typescript-eslint/explicit-function-return-type": "off",
-    "@typescript-eslint/no-parameter-properties": "off",
-    "@typescript-eslint/no-var-requires": "warn",
-    "@typescript-eslint/no-non-null-asserted-optional-chain": "warn",
-    "@typescript-eslint/no-inferrable-types": "warn",
-    "@typescript-eslint/no-empty-function": "off",
-    "@typescript-eslint/naming-convention": [
-      "error",
+    '@typescript-eslint/explicit-function-return-type': 'off',
+    '@typescript-eslint/no-parameter-properties': 'off',
+    '@typescript-eslint/no-var-requires': 'warn',
+    '@typescript-eslint/no-non-null-asserted-optional-chain': 'warn',
+    '@typescript-eslint/no-inferrable-types': 'warn',
+    '@typescript-eslint/no-empty-function': 'off',
+    '@typescript-eslint/naming-convention': [
+      'error',
       {
-        format: ["camelCase", "UPPER_CASE", "PascalCase"],
-        selector: "variable",
-        leadingUnderscore: "allow",
+        format: ['camelCase', 'UPPER_CASE', 'PascalCase'],
+        selector: 'variable',
+        leadingUnderscore: 'allow',
       },
-      { format: ["camelCase", "PascalCase"], selector: "function" },
-      { format: ["PascalCase"], selector: "interface" },
-      { format: ["PascalCase"], selector: "typeAlias" },
+      { format: ['camelCase', 'PascalCase'], selector: 'function' },
+      { format: ['PascalCase'], selector: 'interface' },
+      { format: ['PascalCase'], selector: 'typeAlias' },
     ],
-    "@typescript-eslint/explicit-module-boundary-types": "off",
-    "@typescript-eslint/array-type": ["error", { default: "array-simple" }],
-    "@typescript-eslint/no-unused-vars": [
-      "error",
-      { ignoreRestSiblings: true },
-    ],
-    "@typescript-eslint/member-ordering": [
-      "error",
+    '@typescript-eslint/explicit-module-boundary-types': 'off',
+    '@typescript-eslint/array-type': ['error', { default: 'array-simple' }],
+    '@typescript-eslint/no-unused-vars': ['error', { ignoreRestSiblings: true }],
+    '@typescript-eslint/member-ordering': [
+      'error',
       {
         default: [
-          "public-static-field",
-          "private-static-field",
-          "public-instance-field",
-          "private-instance-field",
-          "public-constructor",
-          "private-constructor",
-          "public-instance-method",
-          "private-instance-method",
+          'public-static-field',
+          'private-static-field',
+          'public-instance-field',
+          'private-instance-field',
+          'public-constructor',
+          'private-constructor',
+          'public-instance-method',
+          'private-instance-method',
         ],
       },
     ],
 
-    "import/order": [
-      "error",
+    'import/order': [
+      'error',
       {
-        groups: [
-          "builtin",
-          "external",
-          "internal",
-          "parent",
-          "sibling",
-          "index",
-          "object",
-        ],
-        alphabetize: { order: "asc", caseInsensitive: true },
+        groups: ['builtin', 'external', 'internal', 'parent', 'sibling', 'index', 'object'],
+        alphabetize: { order: 'asc', caseInsensitive: true },
       },
     ],
 
-    "react/prop-types": "off",
+    'react/prop-types': 'off',
     // React.memo, React.forwardRef에서 사용하는 경우도 막고 있어서
-    "react/display-name": "off",
-    "react-hooks/exhaustive-deps": "error",
-    "react/react-in-jsx-scope": "off",
-    "react/no-unknown-property": ["error", { ignore: ["css"] }],
+    'react/display-name': 'off',
+    'react-hooks/exhaustive-deps': 'error',
+    'react/react-in-jsx-scope': 'off',
+    'react/no-unknown-property': ['error', { ignore: ['css'] }],
   },
 };
 ```
@@ -206,11 +195,26 @@ module.exports = {
 ## 05. `.vscode/settings.json` eslint 설정 추가
 
 ```json
-"eslint.nodePath": ".yarn/sdks",
+{
+  "search.exclude": {
+    "**/.yarn": true,
+    "**/.pnp.*": true
+  },
+  "typescript.tsdk": ".yarn/sdks/typescript/lib",
+  "typescript.enablePromptUseWorkspaceTsdk": true,
+  "eslint.nodePath": ".yarn/sdks",
+  "prettier.prettierPath": ".yarn/sdks/prettier/index.js",
 
-// 아래 내용추가
-"eslint.packageManager": "yarn",
-"eslint.validate": ["javascript", "javascriptreact", "typescript", "typescriptreact"],
+  // 기본 포맷터 prettier로 사용
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  // 파일 저장시 formatter 실행
+  "editor.formatOnSave": true,
+  "editor.rulers": [120],
+
+  // 추가되는 내용
+  "eslint.packageManager": "yarn",
+  "eslint.validate": ["javascript", "javascriptreact", "typescript", "typescriptreact"]
+}
 ```
 
 <br /><br />
@@ -537,7 +541,7 @@ yarn add typescript
 
 ```typescript
 export const sayHello = () => {
-  return "hello from lib";
+  return 'hello from lib';
 };
 ```
 
