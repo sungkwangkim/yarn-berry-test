@@ -13,6 +13,7 @@
     "@types/react": "18.2.0",
     "@types/react-dom": "18.2.1",
     "@wanted/lib": "workspace:^",
+    "@wanted/ui": "workspace:^",
     "eslint": "8.39.0",
     "eslint-config-next": "13.3.2",
     "next": "13.3.2",

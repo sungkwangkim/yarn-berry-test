@@ -1,4 +1,5 @@
 import { sayHello } from '@wanted/lib';
+import { Button } from '@wanted/ui';
 import { Inter } from 'next/font/google';
 import Head from 'next/head';
 import Image from 'next/image';
@@ -45,6 +46,9 @@ export default function Home() {
             </a>
           </div>
         </div>
+
+        {/* 추가 */}
+        <Button>Hello From @wanted/ui</Button>
 
         <div className={styles.center}>
           <Image className={styles.logo} src="/next.svg" alt="Next.js Logo" width={180} height={37} priority />
