@@ -304,7 +304,8 @@ yarn workspace @wanted/web dev
 
 ✅ 아래와 같이 나왔다면 성공!
 
-<img width="784" alt="스크린샷 2022-12-07 22 06 44" src="https://user-images.githubusercontent.com/61961190/206187825-41efbef1-0362-41dd-8c1b-19fb6baf64de.png">
+<img width="1154" alt="스크린샷 2023-05-01 20 35 24" src="https://user-images.githubusercontent.com/61961190/235446588-c1363409-1873-4b2a-92dd-5667954cb3c2.png">
+
 
 <br /><br /><br /><br />
 
