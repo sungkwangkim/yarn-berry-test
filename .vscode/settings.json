@@ -4,5 +4,17 @@
     "**/.pnp.*": true
   },
   "typescript.tsdk": ".yarn/sdks/typescript/lib",
-  "typescript.enablePromptUseWorkspaceTsdk": true
+  "typescript.enablePromptUseWorkspaceTsdk": true,
+  "eslint.nodePath": ".yarn/sdks",
+  "prettier.prettierPath": ".yarn/sdks/prettier/index.js",
+
+  // 기본 포맷터 prettier로 사용
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  // 파일 저장시 포맷더 실행
+  "editor.formatOnSave": true,
+  "editor.rulers": [120],
+
+  // eslint
+  "eslint.packageManager": "yarn",
+  "eslint.validate": ["javascript", "javascriptreact", "typescript", "typescriptreact"]
 }
