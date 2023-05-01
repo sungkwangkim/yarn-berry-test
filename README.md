@@ -32,7 +32,7 @@ yarn -v
 // packages 디렉토리 만들기 / 루트 초기화
 yarn init -w
 ```
-https://yarnpkg.com/cli/init
+- yarn berry cli 명령어: https://yarnpkg.com/cli/init
 
 
 <br />
@@ -76,14 +76,16 @@ yarn create next-app
 저는 아래와 같이 셋팅 하였습니다.
 
 
-![스크린샷 2022-12-07 10 44 06](https://user-images.githubusercontent.com/61961190/206067170-13d7b771-9ee4-4d96-93a5-45549cad00ec.png)
+![aaa](https://user-images.githubusercontent.com/61961190/235419035-c7e5192d-01b5-416f-bbc3-3fce7d4e9366.png)
+
 
 
 
 pacakge.json 수정.
 `"name": "@wanted/web"`으로 변경
 
-![스크린샷 2022-12-07 10 45 09](https://user-images.githubusercontent.com/61961190/206067328-b73412f1-7de9-4928-96d8-b4b846834350.png)
+![cccc](https://user-images.githubusercontent.com/61961190/235419746-e4008fb8-2e22-454a-937e-6aff75e9cfc5.png)
+
 
 
 
@@ -155,7 +157,7 @@ cd packages/lib
 yarn init
 
 // typescript 설치
-yarn add typescript -D
+yarn add typescript
 ```
 
 <br /><br />
@@ -168,7 +170,7 @@ yarn add typescript -D
   "version": "1.0.0",
   "private": true,
   "main": "./src/index.ts",
-  "devDependencies": {
+  "depdndencies": {
     "typescript": "^5.0.4"
   }
 }
@@ -211,7 +213,6 @@ yarn add typescript -D
 `packages/lib/src/index.ts` 파일 생성후, 아래 코드 넣는다.
 ```typescript
 export const sayHello = () => {
-   console.log("hello from lib");
    return "hello from lib";
 };
 ```
@@ -241,7 +242,12 @@ yarn workspace @wanted/web add @wanted/lib
 
 ## 9. `apps/wanted/pages/index.tsx` 파일에서 @wanted/lib 사용해보기
 `@wanted/lib`에 `sayHello` 함수를 호출해 봅니다.
-![스크린샷 2022-12-07 10 51 52](https://user-images.githubusercontent.com/61961190/206068252-776b4334-ec61-400b-b9b0-4111bbb3b2af.png)
+
+![bbbb](https://user-images.githubusercontent.com/61961190/235419345-91ca6fca-71de-4028-a4b6-0086b3c63ae5.png)
+
+
+
+
 
 
 그리고, @wanted/web을 구동해 봅니다.
@@ -255,6 +261,6 @@ yarn workspace @wanted/web run dev
 아래와 같이 `hello from lib`이 노출된다면 성공 입니다.
 
 
-<img width="1438" alt="스크린샷 2023-05-01 13 45 34" src="https://user-images.githubusercontent.com/61961190/235408002-b33d0b91-eea0-41ad-b7b2-b53b735ee965.png">
+<img width="1473" alt="스크린샷 2023-05-01 15 55 49" src="https://user-images.githubusercontent.com/61961190/235419482-86e0118d-4f0e-4767-82e9-b7293ec95fad.png">
 
 
