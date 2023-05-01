@@ -50,7 +50,7 @@ https://yarnpkg.com/cli/init
 ```json
 {
   "name": "yarn-berry-workspace-test",
-  "packageManager": "yarn@3.3.0",
+  "packageManager": "yarn@3.5.0",
   "private": true,
   "workspaces": [
     "apps/*",
@@ -65,7 +65,7 @@ https://yarnpkg.com/cli/init
 <br />
 
 
-## 4. apps 폴더에 create next-app 프로젝트 추가
+## 4. apps 폴더에 `create next-app` 프로젝트 추가
 
 ```shell
 // 1. create-next-app 프로젝트 생성
@@ -80,8 +80,9 @@ yarn create next-app
 
 
 
-pacakge.json 수정
-name `@wanted/web`으로 변경
+pacakge.json 수정.
+`"name": "@wanted/web"`으로 변경
+
 ![스크린샷 2022-12-07 10 45 09](https://user-images.githubusercontent.com/61961190/206067328-b73412f1-7de9-4928-96d8-b4b846834350.png)
 
 
@@ -107,7 +108,7 @@ yarn workspace @wanted/web run dev
 ## 5. typescript error 발생
 `./apps/wanted/pages/index.tsx` 을 열어보면 typescript error가 발생합니다.
 
-yarn berry는 npm과 모듈을 불러오는 방식이 다르기 때문에 생기는 문제입니다. 
+yarn berry pnp는 `node_modules` 모듈을 불러오는 방식이 다르기 때문에 생기는 문제입니다. 
 ![ea1a826f-42c5-46f0-8755-9cd047efc047](https://user-images.githubusercontent.com/61961190/205853866-cc45759a-85d3-48f3-a99b-1b524d199f8a.png)
 
 ```shell
@@ -152,6 +153,9 @@ cd packages/lib
 
 // pacakge.json 파일 생성
 yarn init
+
+// typescript 설치
+yarn add typescript -D
 ```
 
 <br /><br />
@@ -164,8 +168,8 @@ yarn init
   "version": "1.0.0",
   "private": true,
   "main": "./src/index.ts",
-  "dependencies": {
-    "typescript": "^4.9.3"
+  "devDependencies": {
+    "typescript": "^5.0.4"
   }
 }
 
@@ -204,7 +208,7 @@ yarn init
 
 <br /><br />
 
-`packages/lib/src/index.ts` 파일 생성하기 하고 간단한 코드 넣는다.
+`packages/lib/src/index.ts` 파일 생성후, 아래 코드 넣는다.
 ```typescript
 export const sayHello = () => {
    console.log("hello from lib");
@@ -230,7 +234,8 @@ yarn workspace @wanted/web add @wanted/lib
 
 `apps/wanted/package.json`에 의존성이 추가된 것을 확인 합니다.
 
-![dadd0545-744d-498e-acc3-a15db42f11d6](https://user-images.githubusercontent.com/61961190/205856200-8c3613de-b998-41ad-bbb3-58a34abb44f2.png)
+<img width="854" alt="스크린샷 2023-05-01 14 16 38" src="https://user-images.githubusercontent.com/61961190/235410258-f603b360-bd61-47ac-ac6b-4b9445696fac.png">
+
 
 
 
@@ -250,5 +255,6 @@ yarn workspace @wanted/web run dev
 아래와 같이 `hello from lib`이 노출된다면 성공 입니다.
 
 
-![스크린샷 2022-12-07 10 54 39](https://user-images.githubusercontent.com/61961190/206068483-468265ec-c26a-4faa-bbf9-208a06fe8cf6.png)
+<img width="1438" alt="스크린샷 2023-05-01 13 45 34" src="https://user-images.githubusercontent.com/61961190/235408002-b33d0b91-eea0-41ad-b7b2-b53b735ee965.png">
+
 
