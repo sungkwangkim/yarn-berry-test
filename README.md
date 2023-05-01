@@ -40,7 +40,10 @@
     "lib": ["dom", "dom.iterable", "esnext"],
     "module": "esnext",
     "jsx": "preserve",
-    "incremental": true
+    "incremental": true,
+    "paths": {
+      "@/*": ["./*"]
+    }
   },
   "exclude": ["**/node_modules", "**/.*/"],
   "include": [
