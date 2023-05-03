@@ -1,5 +1,41 @@
 # yarn berry(2.x, 3.x, 4.x) workspace 
 
+
+## 실습환경 셋팅
+
+1. nvm 설치
+   - window/mac 설치 방법: https://jang8584.tistory.com/295
+
+<img width="753" alt="스크린샷 2023-05-03 17 17 38" src="https://user-images.githubusercontent.com/61961190/235864609-ee92ecd2-f393-43ed-a410-b719a0aa0f3e.png">
+
+
+<br /><br />
+
+
+2. vscode 설치
+   - 설치 링크: https://code.visualstudio.com/
+   
+<img width="1211" alt="스크린샷 2023-05-03 17 16 59" src="https://user-images.githubusercontent.com/61961190/235864487-7c006d7d-80cf-4d3f-b55f-bb31b8f012f3.png">
+
+<br /><br />
+
+
+3. vscode 익스텐션 설치
+
+<img width="1016" alt="스크린샷 2023-05-03 17 20 15" src="https://user-images.githubusercontent.com/61961190/235865194-42a41930-5608-44e2-aa3d-72f7166ac54f.png">
+
+
+
+```
+ID: abumalick.vscode-nvm
+VS Marketplace 링크: https://marketplace.visualstudio.com/items?itemName=abumalick.vscode-nvm
+
+```
+
+
+
+
+
 ## 1. yarn berry 버전 변경
 
 
