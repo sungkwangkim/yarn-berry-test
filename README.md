@@ -1,3 +1,130 @@
+# 2-1주차 배포하기 - github actions로 배포하기 2
+
+> 한개 yml 파일로 선택하여 배포해 보기.
+
+
+## `.github/workflows`에 `ci-deploy-manual.yml` 생성
+
+![스크린샷 2023-05-10 16 57 39](https://github.com/sungkwangkim/yarn-berry-test/assets/61961190/93c6c4c9-a8d3-4152-8107-3aee9ad66a75)
+
+
+
+<br />
+
+
+ci-deploy-manual.yml에 아래 내용을 넣는다.
+
+<details>
+<summary>토글 접기/펼치기</summary>
+
+```yml
+name: CI-deploy-manual
+
+on:
+  workflow_dispatch:
+    inputs:
+      service_name:
+        description: '배포할 서비스명을 선택해주세요.'
+        required: true
+        default: 'wanted'
+        type: choice
+        options:
+          - wanted
+          - admin
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [16.x]
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: 📥 Monorepo install
+        uses: ./.github/actions/yarn-install
+
+      - name: Build web-app
+        working-directory: apps/${{ inputs.service_name }}
+        run: |
+          yarn build
+
+```
+
+</details>
+
+
+
+<br />
+
+
+
+## commit 후 push 합니다.
+
+```shell
+> git add .
+> git commit -m "feat: github actions manual deploy"
+> git push origin 6-deploy-github-actions-manual
+```
+
+<br /><br />
+
+
+## default 브렌치 변경.
+
+테스트 편의상 default 브렌치를 `6-deploy-github-actions-manual` 변경합니다.
+
+<br /><br />
+
+### Setting 탭 --> General --> Default Branch
+
+![스크린샷 2023-05-10 17 04 10](https://github.com/sungkwangkim/yarn-berry-test/assets/61961190/4f9df440-bc67-4fb1-a356-3c0bba53740f)
+
+<br />
+
+
+### 6-deploy-github-actions-manual 선택 후 Update
+
+![스크린샷 2023-05-10 17 05 04](https://github.com/sungkwangkim/yarn-berry-test/assets/61961190/98d4a919-ca18-498d-a690-77a0eb93ed75)
+
+
+<br />
+
+### `I Underdtand, update the default branch` 버튼 클릭
+
+![스크린샷 2023-05-10 17 05 32](https://github.com/sungkwangkim/yarn-berry-test/assets/61961190/5648fbf8-dd57-4d54-889f-76a770ebf85d)
+
+<br />
+
+
+### actions 탭 --> (좌측) CI-deploy-manual 클릭!
+
+![스크린샷 2023-05-10 17 06 00](https://github.com/sungkwangkim/yarn-berry-test/assets/61961190/f9b420b8-03bf-4e2e-abb3-55f1db794680)
+
+
+<br />
+
+### (우측) `Run workflow` 버튼 눌러서 추가된 내용 확인.
+
+![스크린샷 2023-05-10 17 10 00](https://github.com/sungkwangkim/yarn-berry-test/assets/61961190/599feb47-4441-40b2-aff3-089746f44a43)
+
+
+
+
+
+<br /><br /><br /><br />
+
+---
+
+<br /><br /><br /><br />
+
+
+
 # 2-1주차 배포하기 - github actions로 배포하기
 
 ## `.github` 폴더에 2개의 yml 파일을 만든다.
