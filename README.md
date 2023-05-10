@@ -15,10 +15,34 @@
 
 ![스크린샷 2022-12-12 14 06 33](https://user-images.githubusercontent.com/61961190/206964994-6660d5f0-cc21-4b87-89f4-2b86e0a69f33.png)
 
+<br />
+
+
+4. `apps/admin/pages/api/admin.ts` 파일을 생성 후 아래 내용 추가
+
+![스크린샷 2023-05-10 17 17 07](https://github.com/sungkwangkim/yarn-berry-test/assets/61961190/b746b786-e609-4ecb-8775-439f0fd547da)
+
 
 <br />
 
-4. 터미널에서 `yarn` 으로 갱신시켜준다.
+```typescript
+// Next.js API route support: https://nextjs.org/docs/api-routes/introduction
+import type { NextApiRequest, NextApiResponse } from 'next';
+
+type Data = {
+  name: string;
+};
+
+export default function handler(req: NextApiRequest, res: NextApiResponse<Data>) {
+  res.status(200).json({ name: 'John Doe' });
+}
+
+```
+
+
+<br />
+
+5. 터미널에서 `yarn` 으로 갱신시켜준다.
 
 ```shell
 // root 에서
