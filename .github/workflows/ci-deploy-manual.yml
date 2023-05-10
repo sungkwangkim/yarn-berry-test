@@ -1,0 +1,35 @@
+name: CI-deploy-manual
+
+on:
+  workflow_dispatch:
+    inputs:
+      service_name:
+        description: '배포할 서비스명을 선택해주세요.'
+        required: true
+        default: 'wanted'
+        type: choice
+        options:
+          - wanted
+          - admin
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [16.x]
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: 📥 Monorepo install
+        uses: ./.github/actions/yarn-install
+
+      - name: Build web-app
+        working-directory: apps/${{ inputs.service_name }}
+        run: |
+          yarn build
